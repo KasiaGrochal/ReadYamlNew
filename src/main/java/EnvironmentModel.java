@@ -1,3 +1,5 @@
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,9 +12,11 @@ public class EnvironmentModel {
     public String password;
     public boolean active;
     public String browser;
+    public String defaultBrowser = "chrome";
 
     public String getBrowser() {
-        return browser;
+        return StringUtils.isEmpty(browser) ? (this.browser = defaultBrowser) : this.browser;
+
     }
 
     public boolean isActive() {

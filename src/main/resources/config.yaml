@@ -7,7 +7,8 @@ environment:
     password: passwordTest1
 #    active: false
 #    active: true
-    browser: chrome
+#    browser: chrome
+#    browser: firefox
 
   test2:
     envName: test2
@@ -18,6 +19,7 @@ environment:
 #    active: false
 #    active: true
 #    browser: chrome
+#    browser: firefox
 
   prod:
     envName: prod
@@ -29,8 +31,6 @@ environment:
 #    active: true
 #    browser: chrome
 #    browser: firefox
-#    browser: chrome
-
 dataBase:
   postgres:
     dbName: dbPostgres
