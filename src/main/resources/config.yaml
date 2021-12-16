@@ -1,0 +1,58 @@
+environment:
+  test1:
+    envName: test1
+    webUrl: http://www.kotuszkowo.pl
+    title: Kotuszkowo- blog o kotach
+    login: userTest1
+    password: passwordTest1
+#    active: false
+#    active: true
+    browser: chrome
+
+  test2:
+    envName: test2
+    webUrl: https://seleniumui.moderntester.pl/
+    title: Automation Pratice
+    login: userTest2
+    password: passwordTest2
+#    active: false
+#    active: true
+#    browser: chrome
+
+  prod:
+    envName: prod
+    webUrl: https://www.filmweb.pl/
+    title: Filmweb - filmy takie jak Ty!
+    login: userProd
+    password: passwordProd
+#    active: false
+#    active: true
+#    browser: chrome
+#    browser: firefox
+#    browser: chrome
+
+dataBase:
+  postgres:
+    dbName: dbPostgres
+    host: 18.23.55.80
+    user: postgresUser
+    dbPassword: postgresPassword
+    active: false
+#    active: true
+
+  mySql:
+    dbName: dbMySql
+    host: 19.55.23.70
+    user: mySqlUser
+    dbPassword: mySqlPassword
+#    active: false
+    active: true
+
+
+
+
+
+
+
+
+
