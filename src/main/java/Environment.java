@@ -25,5 +25,4 @@ public class Environment {
         listOfEnvironments.add(getTest2());
         return listOfEnvironments;
     }
-
 }

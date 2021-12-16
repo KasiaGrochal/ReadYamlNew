@@ -28,7 +28,7 @@ public class DataBaseModel {
         return dbPassword;
     }
 
-    public Map<String,String> getDataBaseProperties(){
+    public Map<String, String> getDataBaseProperties() {
         Map<String, String> properties = new HashMap<>();
         properties.put("dbName", getDbName());
         properties.put("host", getHost());

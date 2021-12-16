@@ -32,17 +32,15 @@ public class AppProperties {
         List<DataBaseModel> listOfDataBase = yamlReader.getConfig().getDataBase().getListOfDataBase();
         for (DataBaseModel dataBaseModel : listOfDataBase) {
             if (dataBaseModel.isActive()) {
-                Map<String,String> dataBaseProperties = dataBaseModel.getDataBaseProperties();
+                Map<String, String> dataBaseProperties = dataBaseModel.getDataBaseProperties();
                 for (Map.Entry entry : dataBaseProperties.entrySet()) {
-                    System.setProperty(entry.getKey().toString(),entry.getValue().toString());
-                    logger.info("Loaded dataBase property: {} = {}",entry.getKey().toString(), entry.getValue().toString());
+                    System.setProperty(entry.getKey().toString(), entry.getValue().toString());
+                    logger.info("Loaded dataBase property: {} = {}", entry.getKey().toString(), entry.getValue().toString());
                 }
-                logger.info("Loaded dataBase properties total: {}",dataBaseProperties.size());
+                logger.info("Loaded dataBase properties total: {}", dataBaseProperties.size());
             }
         }
     }
 
-
-
-    }
+}
 

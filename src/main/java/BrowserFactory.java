@@ -1,5 +1,4 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -19,7 +18,7 @@ public class BrowserFactory {
                 ChromeOptions optionsChrome = new ChromeOptions();
                 WebDriverManager.chromedriver().setup();
                 optionsChrome.addArguments("start-maximized");
-                driver = new ChromeDriver(optionsChrome);          //listener
+                driver = new ChromeDriver(optionsChrome);
                 driver.get(System.getProperty("webUrl"));
                 break;
             case "firefox":
@@ -37,6 +36,5 @@ public class BrowserFactory {
         }
         return this.driver;
     }
-
 
 }
