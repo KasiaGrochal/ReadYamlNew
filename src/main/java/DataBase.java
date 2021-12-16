@@ -2,13 +2,15 @@
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DataBase {
 
     Logger logger = LoggerFactory.getLogger(DataBase.class);
 
     public DataBaseModel postgres;
     public DataBaseModel mySql;
-    public DataBaseModel activeDataBase;
 
     public DataBaseModel getPostgres() {
         return postgres;
@@ -18,15 +20,11 @@ public class DataBase {
         return mySql;
     }
 
-    public DataBaseModel getActiveDataBase() {
-        if (getPostgres().isActive()) {
-            return activeDataBase = postgres;
-        }
-        else if(getDbMySql().isActive()){
-            return activeDataBase = mySql;
-        }
-        else {
-            return activeDataBase = postgres;
-        }
+    public List<DataBaseModel> getListOfDataBase() {
+        List<DataBaseModel> listOfDataBase = new ArrayList<>();
+        listOfDataBase.add(getPostgres());
+        listOfDataBase.add(getDbMySql());
+        return listOfDataBase;
     }
+
 }

@@ -1,9 +1,10 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Environment {
     public EnvironmentModel test1;
     public EnvironmentModel test2;
     public EnvironmentModel prod;
-    public EnvironmentModel activeModel;
-
 
     public EnvironmentModel getTest1() {
         return test1;
@@ -17,16 +18,12 @@ public class Environment {
         return prod;
     }
 
-    public EnvironmentModel getActiveEnvironment() {
-        if (getTest1().isActive()) {
-            return activeModel = test1;
-        } else if (getTest2().isActive()) {
-            return activeModel = test2;
-        } else if (getProd().isActive()) {
-            return activeModel = prod;
-        }
-        else {
-            return activeModel = test1;
-        }
+    public List<EnvironmentModel> getListOfEnvironments() {
+        List<EnvironmentModel> listOfEnvironments = new ArrayList<>();
+        listOfEnvironments.add(getProd());
+        listOfEnvironments.add(getTest1());
+        listOfEnvironments.add(getTest2());
+        return listOfEnvironments;
     }
+
 }
