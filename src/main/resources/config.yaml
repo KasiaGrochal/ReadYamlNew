@@ -6,7 +6,6 @@ environment:
     login: userTest1
     password: passwordTest1
 #    active: true
-#    browser: chrome
 #    browser: firefox
 
   test2:
@@ -16,7 +15,6 @@ environment:
     login: userTest2
     password: passwordTest2
     active: true
-#    browser: chrome
 #    browser: firefox
 
   prod:
@@ -26,8 +24,8 @@ environment:
     login: userProd
     password: passwordProd
 #    active: true
-#    browser: chrome
 #    browser: firefox
+
 dataBase:
   postgres:
     dbName: dbPostgres
