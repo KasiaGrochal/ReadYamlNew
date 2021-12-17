@@ -15,7 +15,7 @@
         <junit.jupiter.engine.version>5.7.1</junit.jupiter.engine.version>
         <junit.jupiter.params.version>5.7.1</junit.jupiter.params.version>
         <selenium.java.version>4.0.0-alpha-1</selenium.java.version>
-        <webdrivermanager.version>4.4.1</webdrivermanager.version>
+        <webdrivermanager.version>5.0.3</webdrivermanager.version>
         <hamcrest.version>2.2</hamcrest.version>
         <maven.surefire.plugin.version>3.0.0-M3</maven.surefire.plugin.version>
         <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
@@ -95,12 +95,7 @@
             <artifactId>logback-classic</artifactId>
             <version>${logback.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest</artifactId>
-            <version>2.2</version>
-            <scope>compile</scope>
-        </dependency>
+
 
 
     </dependencies>

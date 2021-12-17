@@ -11,13 +11,11 @@ public class TestBase {
     private static Logger logger = LoggerFactory.getLogger(TestBase.class);
 
     private static BrowserFactory browserFactory;
-    private static AppProperties appProperties;
     protected WebDriver driver;
-
 
     @BeforeAll
     static void setDriver() {
-        appProperties = new AppProperties();
+        new AppProperties();
         logger.info("Initialized environment properties");
         browserFactory = new BrowserFactory();
         logger.info("Initialized browser environment");
@@ -25,12 +23,16 @@ public class TestBase {
 
     @BeforeEach
     void setup() {
-        driver = browserFactory.getDriver();
+        driver = browserFactory.getDriver(new BrowserProperties().getActiveBrowser());
+        logger.info("Browser initialized successfully");
+        driver.get(System.getProperty("webUrl"));
+        logger.info("Website opened at: {}", System.getProperty("webUrl"));
     }
 
     @AfterEach
     void tearDown() {
         driver.quit();
+        logger.info("Browser closed successfully");
     }
 
 }

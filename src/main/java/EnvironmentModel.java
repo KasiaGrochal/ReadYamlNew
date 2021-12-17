@@ -1,5 +1,3 @@
-import org.apache.commons.lang3.StringUtils;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,12 +8,6 @@ public class EnvironmentModel {
     public String login;
     public String password;
     public boolean active;
-    public String browser;
-    public String defaultBrowser = "chrome";
-
-    public String getBrowser() {
-        return StringUtils.isEmpty(browser) ? (this.browser = defaultBrowser) : this.browser;
-    }
 
     public boolean isActive() {
         return active;
@@ -42,14 +34,12 @@ public class EnvironmentModel {
     }
 
     public Map<String, String> getProperties() {
-
         Map<String, String> properties = new HashMap<>();
         properties.put("envName", getEnvName());
         properties.put("webUrl", getWebUrl());
         properties.put("title", getTitle());
         properties.put("login", getLogin());
         properties.put("password", getPassword());
-        properties.put("browser", getBrowser());
         return properties;
     }
 
