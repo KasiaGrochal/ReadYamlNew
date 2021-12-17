@@ -1,6 +1,13 @@
 #default browser: chrome
 #default environment: test1
 
+
+browsers:
+#  chrome: CHROME
+#  firefox: FIREFOX
+#  ie: IE
+#  edge: EDGE
+
 environment:
   test1:
     envName: test1
@@ -41,11 +48,7 @@ dataBase:
     dbPassword: mySqlPassword
 #    active: true
 
-browsers:
-#  chrome: CHROME
-#  firefox: FIREFOX
-#  ie: IE
-#  edge: EDGE
+
 
 
 
