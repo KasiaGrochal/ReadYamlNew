@@ -1,6 +1,6 @@
 
 import configuration.AppProperties;
-import configuration.browser.BrowserFactory;
+import configuration.browser.DriverFactory;
 import configuration.browser.BrowserProperties;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -13,7 +13,7 @@ public class TestBase {
 
     private static Logger logger = LoggerFactory.getLogger(TestBase.class);
 
-    private static BrowserFactory browserFactory;
+    private static DriverFactory browserFactory;
     private static AppProperties appProperties;
     protected WebDriver driver;
 
@@ -21,7 +21,7 @@ public class TestBase {
     static void setDriver() {
         appProperties= new AppProperties();
         logger.info("Initialized environment properties");
-        browserFactory = new BrowserFactory();
+        browserFactory = new DriverFactory();
         logger.info("Initialized browser environment");
     }
 

@@ -11,10 +11,12 @@ browsers:
 environment:
   test1:
     envName: test1
-    webUrl: http://www.kotuszkowo.pl
-    title: Kotuszkowo- blog o kotach
+    webUrl: http://146.59.32.4/
+    title: TesterSii
     login: userTest1
     password: passwordTest1
+    existingEmail: existingemail@email.com
+    existingPassword: haslo5
 #    active: true
 
   test2:

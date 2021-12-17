@@ -10,6 +10,16 @@ public class EnvironmentModel {
     public String login;
     public String password;
     public boolean active;
+    public String existingEmail;
+    public String existingPassword;
+
+    public String getExistingEmail() {
+        return existingEmail;
+    }
+
+    public String getExistingPassword() {
+        return existingPassword;
+    }
 
     public boolean isActive() {
         return active;
@@ -42,6 +52,8 @@ public class EnvironmentModel {
         properties.put("title", getTitle());
         properties.put("login", getLogin());
         properties.put("password", getPassword());
+        properties.put("existingEmail", getExistingEmail());
+        properties.put("existingPassword", getExistingPassword());
         return properties;
     }
 

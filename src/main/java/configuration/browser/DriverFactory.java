@@ -11,7 +11,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.ie.InternetExplorerOptions;
 
-public class BrowserFactory {
+public class DriverFactory {
 
     public WebDriver getDriver(Browser browser) {
         WebDriver webDriver;
@@ -39,12 +39,13 @@ public class BrowserFactory {
         EdgeOptions options = new EdgeOptions();
         //add options
         WebDriverManager.edgedriver().setup();
-        return new EdgeDriver(options);
+        return new EdgeDriver();
 
     }
 
     private WebDriver getIe() {
         InternetExplorerOptions ieOptions = new InternetExplorerOptions();
+        ieOptions.ignoreZoomSettings();
         //add options
         WebDriverManager.iedriver().setup();
         return new InternetExplorerDriver(ieOptions);

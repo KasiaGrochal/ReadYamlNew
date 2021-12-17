@@ -20,5 +20,4 @@ public class Config {
     public Environment getEnvironment() {
         return environment;
     }
-
 }
