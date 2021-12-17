@@ -1,5 +1,4 @@
 #default browser: chrome
-#default environment: test1
 
 environment:
   test1:
@@ -16,7 +15,7 @@ environment:
     title: Automation Pratice
     login: userTest2
     password: passwordTest2
-    active: true
+#    active: true
 
   prod:
     envName: prod
@@ -24,7 +23,7 @@ environment:
     title: Filmweb - filmy takie jak Ty!
     login: userProd
     password: passwordProd
-#    active: true
+    active: true
 
 dataBase:
   postgres:
