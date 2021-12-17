@@ -1,4 +1,5 @@
 #default browser: chrome
+#default environment: test1
 
 environment:
   test1:
