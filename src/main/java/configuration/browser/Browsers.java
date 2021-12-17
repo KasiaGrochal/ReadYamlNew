@@ -1,3 +1,7 @@
+package configuration.browser;
+
+import configuration.browser.Browser;
+
 public class Browsers {
     Browser chrome;
     Browser firefox;

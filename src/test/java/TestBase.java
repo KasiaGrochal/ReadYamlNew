@@ -1,4 +1,7 @@
 
+import configuration.AppProperties;
+import configuration.browser.BrowserFactory;
+import configuration.browser.BrowserProperties;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -24,7 +27,7 @@ public class TestBase {
     @BeforeEach
     void setup() {
         driver = browserFactory.getDriver(new BrowserProperties().getActiveBrowser());
-        logger.info("Browser initialized successfully");
+        logger.info("configuration.browser.Browser initialized successfully");
         driver.get(System.getProperty("webUrl"));
         logger.info("Website opened at: {}", System.getProperty("webUrl"));
     }
@@ -32,7 +35,7 @@ public class TestBase {
     @AfterEach
     void tearDown() {
         driver.quit();
-        logger.info("Browser closed successfully");
+        logger.info("configuration.browser.Browser closed successfully");
     }
 
 }
