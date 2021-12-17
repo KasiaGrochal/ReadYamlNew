@@ -23,7 +23,7 @@ environment:
     title: Filmweb - filmy takie jak Ty!
     login: userProd
     password: passwordProd
-    active: true
+#    active: true
 
 dataBase:
   postgres:
@@ -38,7 +38,7 @@ dataBase:
     host: 19.55.23.70
     user: mySqlUser
     dbPassword: mySqlPassword
-    active: true
+#    active: true
 
 browsers:
 #  chrome: CHROME

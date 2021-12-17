@@ -14,11 +14,12 @@ public class TestBase {
     private static Logger logger = LoggerFactory.getLogger(TestBase.class);
 
     private static BrowserFactory browserFactory;
+    private static AppProperties appProperties;
     protected WebDriver driver;
 
     @BeforeAll
     static void setDriver() {
-        new AppProperties();
+        appProperties= new AppProperties();
         logger.info("Initialized environment properties");
         browserFactory = new BrowserFactory();
         logger.info("Initialized browser environment");
