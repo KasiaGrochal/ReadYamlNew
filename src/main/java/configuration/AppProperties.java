@@ -23,7 +23,7 @@ public class AppProperties {
         for (EnvironmentModel environmentModel : listOfEnvironments) {
             if (environmentModel.isActive()) {
                 foundActiveEnvironment = true;
-                Map<String, String> environmentProperties = environmentModel.getProperties();
+                Map<String, Object> environmentProperties = environmentModel.getProperties();
                 for (Map.Entry entry : environmentProperties.entrySet()) {
                     System.setProperty(entry.getKey().toString(), entry.getValue().toString());
                     logger.info("Loaded environment property: {} = {}", entry.getKey().toString(), entry.getValue().toString());
@@ -36,7 +36,7 @@ public class AppProperties {
 
     private void loadDefaultEnvironment() {
         logger.info("No environment was specified in config.yaml. Loading default properties for Test1");
-        Map<String, String> environmentProperties = new YamlReader().getConfig().getEnvironment().getTest1().getProperties();
+        Map<String, Object> environmentProperties = new YamlReader().getConfig().getEnvironment().getTest1().getProperties();
         for (Map.Entry entry : environmentProperties.entrySet()) {
             System.setProperty(entry.getKey().toString(), entry.getValue().toString());
             logger.info("Loaded environment property: {} = {}", entry.getKey().toString(), entry.getValue().toString());

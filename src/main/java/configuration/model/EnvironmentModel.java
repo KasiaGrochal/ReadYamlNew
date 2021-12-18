@@ -1,59 +1,25 @@
 package configuration.model;
 
-import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class EnvironmentModel {
-    public String envName;
-    public String webUrl;
-    public String title;
-    public String login;
-    public String password;
-    public boolean active;
-    public String existingEmail;
-    public String existingPassword;
-
-    public String getExistingEmail() {
-        return existingEmail;
-    }
-
-    public String getExistingPassword() {
-        return existingPassword;
-    }
+    boolean active;
 
     public boolean isActive() {
         return active;
     }
 
-    public String getEnvName() {
-        return envName;
-    }
+    Map<String, Object> properties = new LinkedHashMap<>();
 
-    public String getWebUrl() {
-        return webUrl;
+    @JsonAnySetter
+    void setProperties(String key, Object value) {
+        properties.put(key, value);
     }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public Map<String, String> getProperties() {
-        Map<String, String> properties = new HashMap<>();
-        properties.put("envName", getEnvName());
-        properties.put("webUrl", getWebUrl());
-        properties.put("title", getTitle());
-        properties.put("login", getLogin());
-        properties.put("password", getPassword());
-        properties.put("existingEmail", getExistingEmail());
-        properties.put("existingPassword", getExistingPassword());
+    @JsonAnyGetter
+    public Map<String, Object> getProperties() {
         return properties;
     }
 

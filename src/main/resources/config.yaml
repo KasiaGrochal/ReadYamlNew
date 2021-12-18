@@ -1,7 +1,6 @@
 #default browser: chrome
 #default environment: test1
 
-
 browsers:
 #  chrome: CHROME
 #  firefox: FIREFOX
