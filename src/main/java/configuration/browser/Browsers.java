@@ -1,7 +1,5 @@
 package configuration.browser;
 
-import configuration.browser.Browser;
-
 public class Browsers {
     Browser chrome;
     Browser firefox;
@@ -26,14 +24,14 @@ public class Browsers {
 
     public Browser getActiveBrowser() {
         Browser activeBrowser = null;
-        if(isNotNull(getChrome())) activeBrowser = getChrome();
-        if(isNotNull(getFirefox())) activeBrowser = getFirefox();
-        if(isNotNull(getIe())) activeBrowser=getIe();
-        if(isNotNull(getEdge())) activeBrowser=getEdge();
+        if (isNotNull(getChrome())) activeBrowser = getChrome();
+        if (isNotNull(getFirefox())) activeBrowser = getFirefox();
+        if (isNotNull(getIe())) activeBrowser = getIe();
+        if (isNotNull(getEdge())) activeBrowser = getEdge();
         return activeBrowser;
     }
 
-    private boolean isNotNull(Browser browser){
+    private boolean isNotNull(Browser browser) {
         return browser != null;
     }
 }
