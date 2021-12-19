@@ -30,6 +30,7 @@ public class AppProperties {
                 }
                 logger.info("Loaded environment properties total: {}", environmentProperties.size());
             }
+            break;
         }
         if (foundActiveEnvironment == false) loadDefaultEnvironment();
     }
@@ -56,6 +57,7 @@ public class AppProperties {
                 }
                 logger.info("Loaded dataBase properties total: {}", dataBaseProperties.size());
             }
+            break;
         }
     }
 }

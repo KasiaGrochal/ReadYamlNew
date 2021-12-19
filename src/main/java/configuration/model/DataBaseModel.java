@@ -8,12 +8,11 @@ import java.util.Map;
 
 public class DataBaseModel {
     boolean active;
+    Map<String, Object> dbProperties = new LinkedHashMap<>();
 
     public boolean isActive() {
         return active;
     }
-
-    Map<String, Object> dbProperties = new LinkedHashMap<>();
 
     @JsonAnySetter
     void setDbProperties(String key, Object value) {

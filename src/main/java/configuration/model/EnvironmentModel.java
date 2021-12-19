@@ -8,12 +8,11 @@ import java.util.Map;
 
 public class EnvironmentModel {
     boolean active;
+    Map<String, Object> properties = new LinkedHashMap<>();
 
     public boolean isActive() {
         return active;
     }
-
-    Map<String, Object> properties = new LinkedHashMap<>();
 
     @JsonAnySetter
     void setProperties(String key, Object value) {
