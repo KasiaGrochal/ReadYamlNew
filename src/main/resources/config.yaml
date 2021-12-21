@@ -20,8 +20,8 @@ environment:
 
   test2:
     envName: test2
-    webUrl: https://seleniumui.moderntester.pl/
-    title: Automation Pratice
+    webUrl: http://automationpractice.com/
+    title: My Store
     login: userTest2
     password: passwordTest2
 #    active: true
