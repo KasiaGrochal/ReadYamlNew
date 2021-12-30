@@ -112,6 +112,7 @@
                 <configuration>
                     <systemPropertyVariables>
                         <Env_Value>${Env_Value}</Env_Value>
+                        <Browser_Value>${Browser_Value}</Browser_Value>
                     </systemPropertyVariables>
 
                 </configuration>
