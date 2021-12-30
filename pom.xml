@@ -24,9 +24,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <logback.version>1.2.3</logback.version>
 
-<!--        <Env_Value>test1</Env_Value>-->
+        <Env_Value>test1</Env_Value>
 <!--        <Env_Value>test2</Env_Value>-->
-        <Env_Value>prod</Env_Value>
+<!--        <Env_Value>prod</Env_Value>-->
 
 
     </properties>

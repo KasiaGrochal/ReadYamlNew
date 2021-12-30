@@ -10,6 +10,7 @@ import java.util.Map;
 
 public class AppProperties {
     Logger logger = LoggerFactory.getLogger(AppProperties.class);
+    YamlReader yamlReader = new YamlReader();
 
     public AppProperties() {
         setSystemPropertiesEnvironment();
@@ -35,7 +36,6 @@ public class AppProperties {
     }
 
     private EnvironmentModel getRemoteEnvironment() {
-        YamlReader yamlReader = new YamlReader();
         switch (System.getProperty("Env_Value")) {
             case "test1":
                 logger.info("Environment set remotely: test1");
@@ -52,7 +52,6 @@ public class AppProperties {
     }
 
     private EnvironmentModel findActiveEnvironment() {
-        YamlReader yamlReader = new YamlReader();
         List<EnvironmentModel> listOfEnvironments = yamlReader.getConfig().getEnvironment().getListOfEnvironments();
         for (EnvironmentModel environmentModel : listOfEnvironments) {
             if (environmentModel.isActive()) {
@@ -75,7 +74,6 @@ public class AppProperties {
 
 
     private DataBaseModel findActiveDataBase() {
-        YamlReader yamlReader = new YamlReader();
         List<DataBaseModel> listOfDataBase = yamlReader.getConfig().getDataBase().getListOfDataBase();
         for (DataBaseModel dataBaseModel : listOfDataBase) {
             if (dataBaseModel.isActive()) {
