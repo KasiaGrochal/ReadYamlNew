@@ -8,6 +8,12 @@ import java.util.Map;
 
 public class EnvironmentModel {
     boolean active;
+    String envName;
+
+    public String getEnvName() {
+        return envName;
+    }
+
     Map<String, Object> properties = new LinkedHashMap<>();
 
     public boolean isActive() {

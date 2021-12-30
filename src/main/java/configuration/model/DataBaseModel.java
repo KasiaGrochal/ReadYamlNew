@@ -8,6 +8,12 @@ import java.util.Map;
 
 public class DataBaseModel {
     boolean active;
+    String dbName;
+
+    public String getDbName() {
+        return dbName;
+    }
+
     Map<String, Object> dbProperties = new LinkedHashMap<>();
 
     public boolean isActive() {

@@ -16,7 +16,7 @@ environment:
     password: passwordTest1
     existingEmail: existingemail@email.com
     existingPassword: haslo5
-#    active: true
+    active: true
 
   test2:
     envName: test2
