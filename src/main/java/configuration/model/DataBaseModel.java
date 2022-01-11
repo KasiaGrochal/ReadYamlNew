@@ -2,17 +2,15 @@ package configuration.model;
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
+import lombok.Data;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+@Data
 public class DataBaseModel {
     boolean active;
-    String dbName;
-
-    public String getDbName() {
-        return dbName;
-    }
+    private String dbName;
 
     Map<String, Object> dbProperties = new LinkedHashMap<>();
 

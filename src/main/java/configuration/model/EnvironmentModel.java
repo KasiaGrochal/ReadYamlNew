@@ -2,17 +2,16 @@ package configuration.model;
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
+import lombok.Data;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+@Data
 public class EnvironmentModel {
-    boolean active;
-    String envName;
+    private boolean active;
+    private String envName;
 
-    public String getEnvName() {
-        return envName;
-    }
 
     Map<String, Object> properties = new LinkedHashMap<>();
 
