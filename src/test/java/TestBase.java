@@ -1,5 +1,6 @@
 
 import configuration.AppConfig;
+import configuration.browser.Browser;
 import configuration.browser.DriverFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -14,7 +15,7 @@ public class TestBase {
 
     private static Logger logger = LoggerFactory.getLogger(TestBase.class);
 
-    private static DriverFactory driverFactory;
+    private static Browser browser;
     private static AppConfig appConfig = new AppConfig();
     public static Map<String, String> environmentProperties;
     protected WebDriver driver;
@@ -22,14 +23,14 @@ public class TestBase {
     @BeforeAll
     static void setDriver() {
         environmentProperties= appConfig.getEnvironmentConfig();
+        browser =appConfig.getBrowserConfig();
         logger.info("Initialized environment properties");
-        driverFactory = new DriverFactory();
     }
 
     @BeforeEach
     void setup() {
-        driver = driverFactory.getDriver(appConfig.getBrowserConfig());
-        logger.info("Browser initialized successfully for {}", appConfig.getBrowserConfig());
+        driver = new DriverFactory().getDriver(browser);
+        logger.info("Browser initialized successfully");
         driver.get(environmentProperties.get("webUrl"));
         logger.info(environmentProperties.get("webUrl"));
     }
