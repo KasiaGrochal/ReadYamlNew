@@ -1,4 +1,4 @@
-package configuration.model;
+package configuration.environment;
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
@@ -13,19 +13,19 @@ public class EnvironmentModel {
     private String envName;
 
 
-    Map<String, Object> properties = new LinkedHashMap<>();
+    Map<String, String> properties = new LinkedHashMap<>();
 
     public boolean isActive() {
         return active;
     }
 
     @JsonAnySetter
-    void setProperties(String key, Object value) {
+    void setProperties(String key, String value) {
         properties.put(key, value);
     }
 
     @JsonAnyGetter
-    public Map<String, Object> getProperties() {
+    public Map<String, String> getProperties() {
         return properties;
     }
 

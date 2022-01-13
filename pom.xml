@@ -26,7 +26,7 @@
         <lombok.version>1.18.22</lombok.version>
 
 
-<!--        <Env_Value></Env_Value>-->
+<!--        <Env_Value>test1</Env_Value>-->
 
 
     </properties>
@@ -118,8 +118,8 @@
                 <version>${maven.surefire.plugin.version}</version>
                 <configuration>
                     <systemPropertyVariables>
-                        <Env_Value>${Env_Value}</Env_Value>
-                        <Browser_Value>${Browser_Value}</Browser_Value>
+                        <Env_Value></Env_Value>
+                        <Browser_Value></Browser_Value>
                     </systemPropertyVariables>
 
                 </configuration>
@@ -129,8 +129,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven.compiler.plugin.version}</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>11</source>
+                    <target>11</target>
                 </configuration>
             </plugin>
 

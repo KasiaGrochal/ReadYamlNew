@@ -1,29 +1,21 @@
 package configuration.browser;
 
-import configuration.YamlReader;
+
+import configuration.Config;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class BrowserProperties {
-    Logger logger = LoggerFactory.getLogger(BrowserProperties.class);
+public class BrowserProvider {
+    private static Logger logger = LoggerFactory.getLogger(BrowserProvider.class);
 
-    public BrowserProperties() {
-
+    public static String getBrowserFromPom(){
+        return System.getProperty("Browser_Value");
     }
 
-
-    public Browser getBrowser(){
-        try {
-            System.getProperty("Browser_Value");
-            return getRemoteBrowser();
-        } catch (NullPointerException e) {
-            return getActiveBrowser();
-        }
-    }
-    public Browser getActiveBrowser(){
+    public static Browser getActiveBrowser(Config config){
         Browser browser = Browser.CHROME;
         try{
-            browser = new YamlReader().getConfig().getBrowsers().getActiveBrowser();
+            browser = config.getBrowsers().getActiveBrowser();
         }catch (NullPointerException e){
             logger.info("No driver was specified. Running test on default browser: {}",browser);
             return browser;
@@ -31,8 +23,8 @@ public class BrowserProperties {
         return browser;
     }
 
-    private Browser getRemoteBrowser() {
-        switch (System.getProperty("Browser_Value")) {
+    public static Browser getRemoteBrowser() {
+        switch (getBrowserFromPom()) {
             case "chrome":
                 logger.info("Browser set remotely: CHROME");
                 return Browser.CHROME;

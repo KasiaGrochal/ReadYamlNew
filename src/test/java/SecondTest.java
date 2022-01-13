@@ -17,7 +17,7 @@ public class SecondTest extends TestBase{
     @Tag("regression")
     public void validatePageTitleSecond() {
         String displayedTitle = driver.getTitle();
-        String expectedTitle = System.getProperty("title");
+        String expectedTitle = environmentProperties.get("title");
         assertThat(displayedTitle, equalTo(expectedTitle));
         logger.info("Displayed name: '{}' is the same as expected: '{}'. Test completed successfully.", displayedTitle, expectedTitle);
 

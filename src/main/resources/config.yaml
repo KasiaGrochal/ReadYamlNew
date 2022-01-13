@@ -2,7 +2,7 @@
 #default environment: test1
 
 browsers:
-#  chrome: CHROME
+  chrome: CHROME
 #  firefox: FIREFOX
 #  ie: IE
 #  edge: EDGE
@@ -34,20 +34,7 @@ environment:
     password: passwordProd
 #    active: true
 
-dataBase:
-  postgres:
-    dbName: dbPostgres
-    host: 18.23.55.80
-    user: postgresUser
-    dbPassword: postgresPassword
-#    active: true
 
-  mySql:
-    dbName: dbMySql
-    host: 19.55.23.70
-    user: mySqlUser
-    dbPassword: mySqlPassword
-#    active: true
 
 
 

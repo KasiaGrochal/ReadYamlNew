@@ -17,7 +17,7 @@ public class PageTitleTest extends TestBase {
     public void validatePageTitle() {
 
         String displayedTitle = driver.getTitle();
-        String expectedTitle = System.getProperty("title");
+        String expectedTitle = environmentProperties.get("title");
         assertThat(displayedTitle, equalTo(expectedTitle));
         logger.info("Displayed name: '{}' is the same as expected: '{}'. Test completed successfully.", displayedTitle, expectedTitle);
 
