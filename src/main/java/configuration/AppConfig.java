@@ -1,13 +1,10 @@
 package configuration;
 
 import configuration.browser.Browser;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.Map;
 
 public class AppConfig {
-    private static Logger logger = LoggerFactory.getLogger(AppConfig.class);
+
     private static Config instance;
 
 

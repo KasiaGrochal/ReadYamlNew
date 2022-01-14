@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class EnvironmentProvider {
     private static Logger logger = LoggerFactory.getLogger(EnvironmentProvider.class);
@@ -17,29 +18,31 @@ public class EnvironmentProvider {
         String environmentName = getEnvFromPom();
         switch (environmentName) {
             case "test1":
-                logger.info("Environment set remotely: {}",environmentName);
+                logger.info("Environment set in POM: {}",environmentName);
                 return config.getEnvironment().getTest1();
             case "test2":
-                logger.info("Environment set remotely: {}",environmentName);
+                logger.info("Environment set in POM: {}",environmentName);
                 return config.getEnvironment().getTest2();
             case "prod":
-                logger.info("Environment set remotely: {}",environmentName);
+                logger.info("Environment set in POM: {}",environmentName);
                 return config.getEnvironment().getProd();
             default:
-                logger.info("Invalid name for environment");
+                logger.info("Found environment set in POM: '{}' -invalid name for environment",environmentName);
                 return null;
         }
     }
 
     public static EnvironmentModel findActiveEnvironment(Config config) {
         List<EnvironmentModel> listOfEnvironments = config.getEnvironment().getListOfEnvironments();
-        for (EnvironmentModel environmentModel : listOfEnvironments) {
-            if (environmentModel.isActive()) {
-                logger.info("Found active environment: {}",environmentModel.getEnvName());
-                return environmentModel;
-            }
+        try {
+            EnvironmentModel active=listOfEnvironments.stream().filter(EnvironmentModel::isActive).findFirst().get();
+            logger.info("Active environment found: {}",active.getEnvName());
+            return active;
         }
-        logger.info("Environment was not specified. Default environment will be loaded: test1.");
-        return config.getEnvironment().getTest1(); //default-zmenic na czytanie z yamla
+        catch (NoSuchElementException e){
+            logger.info("Environment was not specified. Default environment will be loaded: test1.");
+            return config.getEnvironment().getTest1();
+        }
+
     }
 }

@@ -7,6 +7,7 @@ import configuration.browser.Browsers;
 import configuration.environment.Environment;
 import configuration.environment.EnvironmentModel;
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.io.File;
@@ -16,6 +17,7 @@ import static configuration.browser.BrowserProvider.*;
 import static configuration.environment.EnvironmentProvider.*;
 
 @Data
+@Slf4j
 public class Config {
     private static Logger logger = LoggerFactory.getLogger(Config.class);
 
@@ -38,7 +40,7 @@ public class Config {
             return mapper.readValue(new File("src/main/resources/config.yaml"), Config.class);
         }
         catch (IOException e) {
-            logger.error("Exception while reading config.yaml -> {}", e);
+            logger.error("Exception while reading config.yaml -> {}", e.getCause());
         }
         return null;
     }

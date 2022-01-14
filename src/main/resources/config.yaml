@@ -2,7 +2,7 @@
 #default environment: test1
 
 browsers:
-  chrome: CHROME
+#  chrome: CHROME
 #  firefox: FIREFOX
 #  ie: IE
 #  edge: EDGE
@@ -16,7 +16,7 @@ environment:
     password: passwordTest1
     existingEmail: existingemail@email.com
     existingPassword: haslo5
-    active: true
+#    active: true
 
   test2:
     envName: test2

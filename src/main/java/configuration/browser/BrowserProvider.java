@@ -20,24 +20,27 @@ public class BrowserProvider {
             logger.info("No driver was specified. Running test on default browser: {}",browser);
             return browser;
         }
+        logger.info("Driver specified in config.yaml: {}",browser);
         return browser;
     }
 
     public static Browser getRemoteBrowser() {
-        switch (getBrowserFromPom()) {
+        String browserName= getBrowserFromPom();
+        switch (browserName) {
             case "chrome":
-                logger.info("Browser set remotely: CHROME");
+                logger.info("Browser set in POM: {}",browserName);
                 return Browser.CHROME;
             case "firefox":
-                logger.info("Browser set remotely: FIREFOX");
+                logger.info("Browser set in POM: {}",browserName);
                 return Browser.FIREFOX;
             case "edge":
-                logger.info("Browser set remotely: EDGE");
+                logger.info("Browser set in POM: {}",browserName);
                 return Browser.EDGE;
             case "IE":
-                logger.info("Browser set remotely: IE");
+                logger.info("Browser set in POM: {}",browserName);
                 return Browser.IE;
             default:
+                logger.info("Found browser set in POM: '{}' -invalid name for browser",browserName);
                 return null;
         }
     }
