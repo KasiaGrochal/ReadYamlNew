@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
+
 @Data
 public class ConfigReader {
     Logger logger = LoggerFactory.getLogger(ConfigReader.class);
@@ -18,10 +19,9 @@ public class ConfigReader {
         try {
             ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
             mapper.findAndRegisterModules();
-           config= mapper.readValue(new File("src/main/resources/config.yaml"), Config.class);
-           logger.info("Reading Config File");
-        }
-        catch (IOException e) {
+            config = mapper.readValue(new File("src/main/resources/config.yaml"), Config.class);
+            logger.info("Reading Config File");
+        } catch (IOException e) {
             logger.error("Exception while reading config.yaml -> {}", e.getMessage());
         }
     }
