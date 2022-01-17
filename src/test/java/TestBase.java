@@ -1,5 +1,7 @@
 
 import configuration.AppConfig;
+import configuration.Config;
+import configuration.ConfigReader;
 import configuration.browser.Browser;
 import configuration.browser.DriverFactory;
 import lombok.extern.slf4j.Slf4j;
@@ -10,19 +12,21 @@ import org.openqa.selenium.WebDriver;
 
 import java.util.Map;
 
+
 @Slf4j
 public class TestBase {
 
     private static Browser browser;
-    private static AppConfig appConfig = new AppConfig();
-    public static Map<String, String> environmentProperties;
     protected WebDriver driver;
+    public static Map<String, String> environmentProperties;
 
     @BeforeAll
     static void setDriver() {
-        environmentProperties= appConfig.getEnvironmentConfig();
-        browser =appConfig.getBrowserConfig();
+        Config config = new ConfigReader().getConfig();
+        environmentProperties = AppConfig.getEnvironmentConfig(config);
+        browser = AppConfig.getBrowser(config);
         log.info("Initialized environment properties");
+
     }
 
     @BeforeEach

@@ -1,26 +1,25 @@
 package configuration;
 
 import configuration.browser.Browser;
+import configuration.environment.EnvironmentModel;
+
 import java.util.Map;
+
+import static configuration.browser.BrowserProvider.*;
+import static configuration.environment.EnvironmentProvider.*;
 
 public class AppConfig {
 
-    private static Config instance;
-
-
-    public Map<String,String> getEnvironmentConfig(){
-        return getInstance().getEnvironmentModel().getProperties();
+    public static Map<String, String> getEnvironmentConfig(Config config) {
+        return getEnvironmentModel(config).getProperties();
     }
 
-    public Browser getBrowserConfig(){
-        return getInstance().getBrowser();
+    public static EnvironmentModel getEnvironmentModel(Config config) {
+        return getEnvFromPom().isEmpty() ? findActiveEnvironment(config) : getRemoteEnvironment(config);
     }
 
-    public static Config getInstance() {
-        if (instance == null) {
-            instance = new Config();
-        }
-        return instance;
+    public static Browser getBrowser(Config config) {
+        return getBrowserFromPom().isEmpty() ? getActiveBrowser(config) : getRemoteBrowser();
     }
 
 

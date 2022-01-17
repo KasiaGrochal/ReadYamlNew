@@ -22,4 +22,16 @@ public class SecondTest extends TestBase{
         logger.info("Displayed name: '{}' is the same as expected: '{}'. Test completed successfully.", displayedTitle, expectedTitle);
 
     }
+
+    @Test
+    @DisplayName("FIFTH TEST")
+    @Tag("pageTitleFIFTH")
+    @Tag("regression")
+    public void validatePageTitleFIVE() {
+        String displayedTitle = driver.getTitle();
+        String expectedTitle = environmentProperties.get("title");
+        assertThat(displayedTitle, equalTo(expectedTitle));
+        logger.info("Displayed name: '{}' is the same as expected: '{}'. Test completed successfully.", displayedTitle, expectedTitle);
+
+    }
 }
